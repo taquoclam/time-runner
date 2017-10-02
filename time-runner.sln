@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-runner", "Assembly-CSharp.csproj", "{9483569B-416E-A968-122B-3E65D5C22AF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-runner", "Assembly-CSharp-firstpass.csproj", "{FB6CC444-7942-0ACB-DB81-9AAD75EAC5AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-runner", "Assembly-CSharp-Editor-firstpass.csproj", "{C0C737BC-6A2E-45C8-8673-1D05CA218205}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{9483569B-416E-A968-122B-3E65D5C22AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9483569B-416E-A968-122B-3E65D5C22AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9483569B-416E-A968-122B-3E65D5C22AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6CC444-7942-0ACB-DB81-9AAD75EAC5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6CC444-7942-0ACB-DB81-9AAD75EAC5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6CC444-7942-0ACB-DB81-9AAD75EAC5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6CC444-7942-0ACB-DB81-9AAD75EAC5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C737BC-6A2E-45C8-8673-1D05CA218205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C737BC-6A2E-45C8-8673-1D05CA218205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C737BC-6A2E-45C8-8673-1D05CA218205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C737BC-6A2E-45C8-8673-1D05CA218205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
