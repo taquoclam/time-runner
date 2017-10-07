@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2f8a25706d73f458b8d028df680944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilities: []
+  speedRate: 0
+  Weapon: {fileID: 114035419727825578, guid: 647efa832e981f049a8526e9c97cfc59, type: 2}
 --- !u!212 &212651677494888760
 SpriteRenderer:
   m_ObjectHideFlags: 1

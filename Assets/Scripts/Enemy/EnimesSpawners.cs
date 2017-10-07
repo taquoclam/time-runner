@@ -9,14 +9,8 @@ public class EnimesSpawners : MonoBehaviour
     public float[] spawnRate; // spawners' spawn rate
     public float[] spawnersScore; // spawners' score after destroyed
 
-    public string[] spawnerAbility
-        ; //Spawner's ability: ei. "s:10": shooter + spread, "j:70": jumper+ high, "10": normal + position, "x:10": splasher + speed
-
     public float[] minimumSpace;
-    public float[] enemyHP;
     public GameObject boss;
-    public string summonCondition; // conditions to summon a boss
-    public string bossAbility;
 
     private float[] width; // spawner's width after each iteration
     private float[] minimumSpaceMS;
@@ -33,8 +27,7 @@ public class EnimesSpawners : MonoBehaviour
         spawnRateMS = new float[spawners.Length];
         for (int i = 0; i < spawners.Length; i++)
         {
-            width[i] = spawners[i].GetComponent<CircleCollider2D>().radius;
-            print(width[i]);
+            width[i] = spawners[i].GetComponent<BoxCollider2D>().size.x;
             spawnRateMS[i] = Mathf.Abs(spawnRate[i] / GameControl.instance.scrollSpeed);
             minimumSpaceMS[i] = Mathf.Abs(minimumSpace[i] / GameControl.instance.scrollSpeed);
             Invoke("Spawn", Mathf.Abs(width[i] / GameControl.instance.scrollSpeed));

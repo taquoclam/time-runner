@@ -4,7 +4,8 @@ public class Type1 : MonoBehaviour
 {
     public float height;
     public float jumpTime;
-    private bool isGrounded = false; 
+    private bool isGrounded = false;
+    private bool firstJumped = true;
     private Rigidbody2D body;
     private float startTime = 0;
     // Use this for initialization
@@ -19,18 +20,21 @@ public class Type1 : MonoBehaviour
         float timeNow = Time.deltaTime;
         if (isGrounded)
         {
-            body.velocity =  new Vector2(0, height);
+            body.AddForce(new Vector2(0, height*64));
             isGrounded = false;
-            startTime = startTime + jumpTime;
-            print("im");
+            startTime = timeNow + jumpTime;
+            firstJumped = false;
         }
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        print("im not");
-        if (col.gameObject.tag.ToLower() == "ground")
+        if (col.gameObject.tag.ToLower().StartsWith("ground"))
         {
             isGrounded = true;
+        }
+        if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
+        {
+            Destroy(gameObject);
         }
     }
 }
