@@ -541,11 +541,11 @@ GameObject:
   - component: {fileID: 484550388}
   m_Layer: 0
   m_Name: SpikeSpawner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &484550387
 Transform:
   m_ObjectHideFlags: 0
@@ -997,13 +997,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1298260113}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0011451485, w: 0.9999994}
   m_LocalPosition: {x: 18.933, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263239096}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.13100001}
 --- !u!114 &1298260115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,3 +1268,77 @@ Transform:
   m_PrefabParentObject: {fileID: 4491017122724514, guid: e50cdf1c7dbbeec4e9c7c16a8aff4cb3,
     type: 2}
   m_PrefabInternal: {fileID: 1420465481}
+--- !u!1 &1901432220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1901432222}
+  - component: {fileID: 1901432221}
+  m_Layer: 0
+  m_Name: EnemiesSpawners
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1901432221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901432220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cc759c94d54fa42a4656aae4adee3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawners:
+  - {fileID: 1235601830528102, guid: 3c3d0bba11d026b4db0ca924e5ce7176, type: 2}
+  - {fileID: 1235601830528102, guid: 6e32015b3778ca04b9c1ea988df4b1ed, type: 2}
+  - {fileID: 1235601830528102, guid: 1acda070b3960e048b4e9f130f283a04, type: 2}
+  - {fileID: 1235601830528102, guid: 5fc81230324c3f94b89568110199a3a4, type: 2}
+  spawnPosition:
+  - -3.5
+  - -3.5
+  - -3.5
+  - -3.5
+  spawnRate:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  spawnersScore:
+  - 100
+  - 200
+  - 300
+  - 400
+  spawnerAbility:
+  - 
+  - 
+  - 
+  - 
+  minimumSpace:
+  - 3
+  - 3
+  - 3
+  - 3
+  boss: {fileID: 1235601830528102, guid: af0fc02229878c94c9d8e3192cc43ef5, type: 2}
+  summonCondition: 
+  bossAbility: 
+  maxEnemy: 4
+--- !u!4 &1901432222
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901432220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.87, y: 2.86, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

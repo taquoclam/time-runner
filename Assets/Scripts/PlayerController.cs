@@ -68,12 +68,19 @@ public class PlayerController : MonoBehaviour {
 			collidedWith.Add (name);
 			Debug.Log (gameObject.name + " triggered: " + name);
 		}
-
-		// die from spikes
-		if (name.StartsWith ("spikes")) {
+        
+		// die from spike
+		if (name.StartsWith ("normal")) {
 			Die ();
 		}
-	}
+
+        // die from enemies
+        string tag = coll.gameObject.tag.ToLower();
+        if (tag.StartsWith("enemy"))
+        {
+            Die();
+        }
+    }
 
 	void Die() {
 		ParticleSystem particles = Instantiate (damageParticle, myRigidbody.transform.position, myRigidbody.transform.rotation);
