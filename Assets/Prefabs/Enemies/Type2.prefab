@@ -23,10 +23,11 @@ GameObject:
   - component: {fileID: 114057498856430096}
   - component: {fileID: 114609410063193688}
   - component: {fileID: 50085005156516742}
-  - component: {fileID: 114307794292600466}
+  - component: {fileID: 114365246437299122}
   - component: {fileID: 61027961940324652}
+  - component: {fileID: 114460621995452792}
   m_Layer: 0
-  m_Name: Jumper
+  m_Name: Type2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4ccb82a49648b4eb209bdf4393aece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114307794292600466
+--- !u!114 &114365246437299122
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b78f3e6d368494eb57d294de5a43a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114460621995452792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235601830528102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67386f3855021b24181e8e25726521c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities: []
 --- !u!114 &114609410063193688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300158, guid: ed55c512fc455440da5ab97f22b26f87, type: 3}
+  m_Sprite: {fileID: 21300038, guid: ed55c512fc455440da5ab97f22b26f87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

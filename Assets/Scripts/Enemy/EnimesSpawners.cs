@@ -33,7 +33,7 @@ public class EnimesSpawners : MonoBehaviour
         spawnRateMS = new float[spawners.Length];
         for (int i = 0; i < spawners.Length; i++)
         {
-            width[i] = spawners[i].GetComponent<BoxCollider2D>().size.x;
+            width[i] = spawners[i].GetComponent<CircleCollider2D>().radius;
             print(width[i]);
             spawnRateMS[i] = Mathf.Abs(spawnRate[i] / GameControl.instance.scrollSpeed);
             minimumSpaceMS[i] = Mathf.Abs(minimumSpace[i] / GameControl.instance.scrollSpeed);
@@ -44,14 +44,7 @@ public class EnimesSpawners : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < enemiesCount + 1; i++)
-        {
-            Rigidbody2D current = currentEnemy[i].GetComponent<Rigidbody2D>();
-            if (currentEnemy[i].name.StartsWith("jumper"))
-            {
-                current.velocity = new Vector2(0, -3);
-            }
-        }
+ 
     }
 
     void Spawn()
