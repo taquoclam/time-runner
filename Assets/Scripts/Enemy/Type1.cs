@@ -17,12 +17,11 @@ public class Type1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float timeNow = Time.deltaTime;
-        if (isGrounded)
+        if (isGrounded && Time.time > startTime)
         {
             body.AddForce(new Vector2(0, height*64));
             isGrounded = false;
-            startTime = timeNow + jumpTime;
+            startTime = Time.time + jumpTime;
             firstJumped = false;
         }
     }

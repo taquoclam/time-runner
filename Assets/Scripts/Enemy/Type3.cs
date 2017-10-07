@@ -2,24 +2,30 @@
 
 public class Type3 : MonoBehaviour
 {
-    public float speedRate;
+    public float shootRate;
     private bool isGrounded = false;
-    private Rigidbody2D body;
-    private GameObject weapon;
-    public string weaponName;
+    public GameObject weapon;
     // Use this for initialization
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        weapon = Instantiate(weapon,
-                new Vector3(transform.position.x, transform.position.y, transform.position.z),
-                Quaternion.identity);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float timeNow = Time.deltaTime;
+        float timeNow = Time.time;
+        if (isGrounded)
+        {
+            GameObject bullet = Instantiate(weapon,
+                new Vector3(transform.position.x, transform.position.y, transform.position.z),
+                Quaternion.identity);
+            Rigidbody2D body = bullet.GetComponent<Rigidbody2D>();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            body.velocity = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+            shootRate += Time.time;
+            isGrounded = false;
+        }
     }
     void OnCollisionEnter2D(Collision2D col)
     {
