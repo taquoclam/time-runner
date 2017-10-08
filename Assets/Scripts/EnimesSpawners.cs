@@ -38,21 +38,20 @@ public class EnimesSpawners : MonoBehaviour {
         
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        for (int i= 0; i< enemiesCount; i++)
+
+    // Update is called once per frame
+    void Update() {
+        for (int i = 0; i < enemiesCount + 1; i++)
         {
-            if (currentEnemy[i].name.StartsWith("Jumper"))
-            {
-                ; 
+            Rigidbody2D current = currentEnemy[i].GetComponent<Rigidbody2D>();
+            if (currentEnemy[i].name.StartsWith("jumper")){
+                current.velocity = new Vector2(0, -3);
             }
         }
-        
     }
     void Spawn()
     {
-        int randomEnemy = Random.Range(0, maxEnemy);
+        int randomEnemy = Random.Range(1, maxEnemy);
         if (spawnRateMS[randomEnemy] >= Random.Range(0.0001f, 1f) && enemiesCount < maxEnemy)
         {
             currentEnemy[enemiesCount] = Instantiate(spawners[randomEnemy], new Vector3(transform.position.x, spawnPosition[randomEnemy], transform.position.z), Quaternion.identity);
@@ -60,7 +59,6 @@ public class EnimesSpawners : MonoBehaviour {
             Invoke("Spawn", spawnRateMS[randomEnemy]);
         }
         else {
-            print("end here" + enemiesCount);
             enemiesCount = 0;
             Invoke("Spawn", minimumSpaceMS[randomEnemy]);
         }
