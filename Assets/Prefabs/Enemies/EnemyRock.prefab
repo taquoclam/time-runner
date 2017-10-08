@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4195264540246966}
   - component: {fileID: 212180463833910330}
-  - component: {fileID: 114993616851124414}
+  - component: {fileID: 114353293544801478}
   m_Layer: 0
   m_Name: EnemyRock
   m_TagString: Untagged
@@ -35,13 +35,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585396716912764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.35, y: -2.59, z: -1}
+  m_LocalPosition: {x: 10, y: -3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114993616851124414
+--- !u!114 &114353293544801478
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,8 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6719ec352cee0843974f9dfc9faeac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 50383351737412068, guid: a89ced28b2acb5749b1f82ce1249b190,
-    type: 2}
+  projectile: {fileID: 1819085352894580, guid: a89ced28b2acb5749b1f82ce1249b190, type: 2}
 --- !u!212 &212180463833910330
 SpriteRenderer:
   m_ObjectHideFlags: 1

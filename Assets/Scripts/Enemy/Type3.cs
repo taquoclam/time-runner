@@ -2,9 +2,8 @@
 
 public class Type3 : MonoBehaviour
 {
-    public float shootRate;
     private bool isGrounded = false;
-    public EnemiesWeapon weapon;
+    public EnemiesWeapons weapon;
     // Use this for initialization
     void Start()
     {
@@ -26,6 +25,7 @@ public class Type3 : MonoBehaviour
         if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
         {
             Destroy(gameObject);
+            Destroy(weapon, 1);
         }
     }
     void Fire1()
@@ -34,14 +34,8 @@ public class Type3 : MonoBehaviour
     }
 
     // equip weapon
-    void Equip(EnemiesWeapon weapon)
+    void Equip(EnemiesWeapons weapon)
     {
-        if (this.weapon != null)
-        {
-            this.weapon.enabled = false;
-        }
-
-        weapon.enabled = true;
-        this.weapon = weapon;
+        Instantiate(weapon, transform.position, Quaternion.identity);
     }
 }

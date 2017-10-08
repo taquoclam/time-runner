@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace EnemiesWp
 {
-    public class EnemiesRock : EnemiesWeapon
+    public class EnemiesRock : EnemiesWeapons
     {
-        public Rigidbody2D projectile;
-
-        private TimeSpan useDelay = new TimeSpan((long)(TimeSpan.TicksPerSecond * 0.4));
+        public GameObject projectile;
+        private Rigidbody2D body;
+        private TimeSpan useDelay = new TimeSpan((long)(TimeSpan.TicksPerSecond * 1.5));
         private Stopwatch stopwatch = new Stopwatch();
 
         // attack if enough time has passed
@@ -24,9 +24,13 @@ namespace EnemiesWp
 
         private void AttackNow()
         {
-            GameObject a = GameObject.Find("Type3");
-            if (a != null){
-                Instantiate(projectile, a.transform.position, Quaternion.identity);
+            Type3[] shooters = FindObjectsOfType(typeof(Type3)) as Type3[];
+            foreach (Type3 shooter in shooters)
+            {
+                if (shooter != null)
+                {
+                    Instantiate(projectile, shooter.transform.position, Quaternion.identity);
+                }
             }
             
         }

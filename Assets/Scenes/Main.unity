@@ -981,7 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 1235601830528102, guid: af0fc02229878c94c9d8e3192cc43ef5, type: 2}
-  waitTime: 2
+  waitTime: 20
   life: 10
 --- !u!4 &930200308
 Transform:

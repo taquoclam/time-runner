@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - Boss
   - EnemyProjectile
+  - Shooter
   layers:
   - Default
   - TransparentFX

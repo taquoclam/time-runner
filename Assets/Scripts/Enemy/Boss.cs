@@ -9,6 +9,7 @@ public class Boss : MonoBehaviour
     private Rigidbody2D body;
     private bool isSpwaned = false;
     // Use this for initialization
+    private bool isDead = false;
     void Start()
     {
         body = GetComponent< Rigidbody2D > ();
@@ -43,8 +44,13 @@ public class Boss : MonoBehaviour
             if (life < 1)
             {
                 Destroy(gameObject);
+                isDead = true;
             }
             else { life = life - 1; }
         }
+    }
+    public bool IsDead()
+    {
+        return isDead;
     }
 }
