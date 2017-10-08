@@ -13,7 +13,7 @@ public class EnemiesAbility : MonoBehaviour
     // for instance: abilities = ["s:speed+100,spread+100", "x:speed+200,height+100"]
 
     private Rigidbody2D body;
-    private bool[] setAbi= new 
+    private bool[] setAbi;
     private string evilType; // name of Enemy 
 
     // Use this for initialization
