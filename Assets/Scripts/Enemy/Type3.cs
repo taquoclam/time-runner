@@ -4,6 +4,7 @@ public class Type3 : MonoBehaviour
 {
     private bool isGrounded = false;
     public EnemiesWeapons weapon;
+    private EnemiesWeapons clone;
     // Use this for initialization
     void Start()
     {
@@ -25,7 +26,7 @@ public class Type3 : MonoBehaviour
         if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
         {
             Destroy(gameObject);
-            Destroy(weapon, 1);
+            clone.DestroySelf();
         }
     }
     void Fire1()
@@ -36,6 +37,6 @@ public class Type3 : MonoBehaviour
     // equip weapon
     void Equip(EnemiesWeapons weapon)
     {
-        Instantiate(weapon, transform.position, Quaternion.identity);
+        clone = Instantiate(weapon, transform.position, Quaternion.identity);
     }
 }

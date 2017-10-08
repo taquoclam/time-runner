@@ -34,6 +34,9 @@ namespace EnemiesWp
             }
             
         }
-        
+        public void destroySelf()
+        {
+            Destroy(gameObject);
+        }
     }
 }

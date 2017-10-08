@@ -16,4 +16,8 @@ public abstract class EnemiesWeapons : MonoBehaviour {
             transform.position = enemy.transform.position;
         }
     }
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 }

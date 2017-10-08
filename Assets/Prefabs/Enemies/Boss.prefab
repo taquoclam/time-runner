@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212651677494888760}
   - component: {fileID: 50085005156516742}
   - component: {fileID: 61027961940324652}
-  - component: {fileID: 114916307779919762}
   - component: {fileID: 58942764171094938}
+  - component: {fileID: 114239909497258434}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -104,7 +104,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &114916307779919762
+--- !u!114 &114239909497258434
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,12 +112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1235601830528102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b85471d3c2f21b46a1c58487caf00af, type: 3}
+  m_Script: {fileID: 11500000, guid: 2accdc938ced1bf4781b6cd48cb14aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 1235601830528102}
-  waitTime: 10
-  life: 10
+  life: 50
 --- !u!212 &212651677494888760
 SpriteRenderer:
   m_ObjectHideFlags: 1

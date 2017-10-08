@@ -719,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &484550387
 Transform:
   m_ObjectHideFlags: 0
@@ -981,8 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 1235601830528102, guid: af0fc02229878c94c9d8e3192cc43ef5, type: 2}
-  waitTime: 20
-  life: 10
+  waitTime: 5
 --- !u!4 &930200308
 Transform:
   m_ObjectHideFlags: 0

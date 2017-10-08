@@ -21,13 +21,13 @@ namespace Projectiles
         {
 
             var tag = coll.gameObject.tag.ToLower();
-            if (tag.StartsWith("Player"))
+            if (tag.StartsWith("Player") || tag.StartsWith("Playerprojectile"))
             {
                 DestroySelf();
             }
         }
 
-        void DestroySelf()
+        public void DestroySelf()
         {
             Destroy(gameObject);
         }

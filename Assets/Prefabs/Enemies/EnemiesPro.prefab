@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58654356894524108}
   - component: {fileID: 114479595682422994}
   - component: {fileID: 114228778587706864}
+  - component: {fileID: 114348219334482250}
   m_Layer: 0
   m_Name: EnemiesPro
   m_TagString: EnemyProjectile
@@ -88,6 +89,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb9e2dd4cb2c83409017b5332999e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114348219334482250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819085352894580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b78f3e6d368494eb57d294de5a43a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114479595682422994
