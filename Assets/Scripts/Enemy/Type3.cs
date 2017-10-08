@@ -14,7 +14,8 @@ public class Type3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Fire1();
+        if (weapon != null)
+            Fire1();
     }
     void OnCollisionEnter2D(Collision2D col)
     {

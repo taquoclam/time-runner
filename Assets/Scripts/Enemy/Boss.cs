@@ -1,22 +1,50 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    public GameObject boss;
+    public float waitTime = 5f;
+    public int life = 10;
     private Rigidbody2D body;
-    public bool[] setAbi;
-    private string evilType; // name of Enemy 
-    public float timel;
+    private bool isSpwaned = false;
     // Use this for initialization
     void Start()
     {
-    }
+        body = GetComponent< Rigidbody2D > ();
 
-    // Update is called once per frame
+        StartCoroutine(LateCall());
+    }
+    IEnumerator LateCall()
+    {
+
+        yield return new WaitForSeconds(waitTime);
+        if (!isSpwaned)
+        {
+            Instantiate(boss,
+                    new Vector3(transform.position.x, transform.position.y, 0),
+                    Quaternion.identity);
+            isSpwaned = true;
+        }
+    }
+     // Update is called once per frame
     void Update()
     {
-        if (Time.time > timel)
+       
+    }
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+
+        var tag = coll.gameObject.tag.ToLower();
+        print("im back");
+        // die from projectile (todo: health, death animation)
+        if (tag.StartsWith("playerprojectile"))
         {
-            enabled = true;
+            if (life < 1)
+            {
+                Destroy(gameObject);
+            }
+            else { life = life - 1; }
         }
     }
 }

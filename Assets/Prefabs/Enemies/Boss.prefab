@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4514059021015746}
   - component: {fileID: 212651677494888760}
   - component: {fileID: 50085005156516742}
-  - component: {fileID: 114779389007046570}
   - component: {fileID: 61027961940324652}
   - component: {fileID: 114916307779919762}
   - component: {fileID: 58942764171094938}
@@ -39,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235601830528102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.16, y: -1.41, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 8.16, y: -0.696, z: 0}
+  m_LocalScale: {x: 5, y: 6.428488, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,17 +51,17 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235601830528102}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 2.25
+  m_Material: {fileID: 6200000, guid: dd3e6013006954e5f88f8f63ab2a8060, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 1
 --- !u!58 &58942764171094938
@@ -105,17 +104,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &114779389007046570
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1235601830528102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b78f3e6d368494eb57d294de5a43a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114916307779919762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b85471d3c2f21b46a1c58487caf00af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setAbi: 
+  boss: {fileID: 1235601830528102}
+  waitTime: 10
+  life: 10
 --- !u!212 &212651677494888760
 SpriteRenderer:
   m_ObjectHideFlags: 1

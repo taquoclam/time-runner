@@ -24,7 +24,11 @@ namespace EnemiesWp
 
         private void AttackNow()
         {
-            Instantiate(projectile, GameObject.Find("Type3").transform.position, Quaternion.identity);
+            GameObject a = GameObject.Find("Type3");
+            if (a != null){
+                Instantiate(projectile, a.transform.position, Quaternion.identity);
+            }
+            
         }
         
     }

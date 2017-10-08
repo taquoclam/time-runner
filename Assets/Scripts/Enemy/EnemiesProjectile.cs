@@ -11,11 +11,11 @@ namespace Projectiles
         {
             rb = GetComponent<Rigidbody2D>();
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            GameObject enemy = GameObject.Find("Type3");
-            print("this is " + enemy.transform.position.x + " that is " + player.transform.position.x);
             float x = (enemy.transform.position.x - player.transform.position.x) * speedRate;
-            float y = (enemy.transform.position.x - player.transform.position.x) * speedRate;
-            rb.AddForce(new Vector2(-x, y));
+       
+            float x = (transform.position.x - player.transform.position.x) * speedRate;
+            float y = (transform.position.x - player.transform.position.x) * speedRate;
+            rb.velocity = new Vector2(x, y);
         }
 
         void OnTriggerEnter2D(Collider2D coll)

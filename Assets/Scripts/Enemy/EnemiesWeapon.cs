@@ -10,7 +10,6 @@ public abstract class EnemiesWeapon : MonoBehaviour {
         // move weapon to player
         GameObject enemy = GameObject.Find("Type3");
         if (enemy != null)
-            print("hi");
             transform.position = enemy.transform.position;
     }
 }

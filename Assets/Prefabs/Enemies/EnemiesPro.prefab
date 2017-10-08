@@ -23,10 +23,11 @@ GameObject:
   - component: {fileID: 50383351737412068}
   - component: {fileID: 58654356894524108}
   - component: {fileID: 114479595682422994}
-  - component: {fileID: 114072060908541596}
+  - component: {fileID: 114154574751511600}
+  - component: {fileID: 114963440104709126}
   m_Layer: 0
   m_Name: EnemiesPro
-  m_TagString: PlayerProjectile
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +80,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114072060908541596
+--- !u!114 &114154574751511600
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,9 +88,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819085352894580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 983e7b7514e14967983a9bc43f02be33, type: 3}
+  m_Script: {fileID: 11500000, guid: cbb9e2dd4cb2c83409017b5332999e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedRate: 0.1
 --- !u!114 &114479595682422994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +103,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4ccb82a49648b4eb209bdf4393aece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114963440104709126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819085352894580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb9e2dd4cb2c83409017b5332999e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedRate: 0.1
 --- !u!212 &212608497013443428
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -20,7 +20,7 @@ namespace Projectiles
             var tag = coll.gameObject.tag.ToLower();
 
             // break on enemy (todo: make breaking animation)
-            if (tag.StartsWith("enemy"))
+            if (tag.StartsWith("enemy") || tag.StartsWith("boss"))
             {
                 DestroySelf();
             }
