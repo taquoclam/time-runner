@@ -16,7 +16,7 @@ namespace Projectiles
 
         void OnTriggerEnter2D(Collider2D coll)
         {
-            var name = coll.gameObject.name.ToLower();
+
             var tag = coll.gameObject.tag.ToLower();
 
             // break on enemy (todo: make breaking animation)
