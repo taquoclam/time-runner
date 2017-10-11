@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed;
 	public float jumpSpeed;
 	private Rigidbody2D myRigidbody;
+	private HeartControl myHeartControl;
 
 	public Transform groundCheck;
 	public float groundCheckRadius;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
 		myAnim = GetComponent<Animator> ();
+		myHeartControl = FindObjectOfType<HeartControl> ();
 		jumpSpeed = 12;
 	}
 	
@@ -46,6 +48,9 @@ public class PlayerController : MonoBehaviour {
 		myAnim.SetFloat ("Speed", Mathf.Abs (myRigidbody.velocity.x));
 		myAnim.SetBool ("Grounded", isGrounded);
 
+		if (myHeartControl.healthCount <= 0) {
+			Die ();
+		}
 	}
 
 	// debug: log all items player collides with, only once
@@ -71,16 +76,23 @@ public class PlayerController : MonoBehaviour {
         
 		// die from spike
 		if (name.StartsWith ("normal")) {
-			Die ();
+			damage ();
 		}
 
         // die from enemies
         string tag = coll.gameObject.tag.ToLower();
         if (tag.StartsWith("enemy"))
         {
-            Die();
+			damage ();
         }
     }
+
+	void damage(){
+		ParticleSystem particles = Instantiate (damageParticle, myRigidbody.transform.position, myRigidbody.transform.rotation);
+		Destroy (particles, 1);
+		myHeartControl.damagePlayer (1);
+
+	}
 
 	void Die() {
 		ParticleSystem particles = Instantiate (damageParticle, myRigidbody.transform.position, myRigidbody.transform.rotation);

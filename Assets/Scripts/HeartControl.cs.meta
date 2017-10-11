@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6c2e1b3643b23418eb7c088fd864da12
+timeCreated: 1507746465
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - heart1: {instanceID: 0}
+  - heart2: {instanceID: 0}
+  - heart3: {instanceID: 0}
+  - heartFull: {fileID: 21300714, guid: ed55c512fc455440da5ab97f22b26f87, type: 3}
+  - heartHalf: {fileID: 21300716, guid: ed55c512fc455440da5ab97f22b26f87, type: 3}
+  - heartEmpty: {fileID: 21300718, guid: ed55c512fc455440da5ab97f22b26f87, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
