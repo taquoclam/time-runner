@@ -7,6 +7,7 @@ TagManager:
   - Weight
   - Ground
   - Enemy
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
