@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 namespace Weapons
 {
@@ -25,7 +24,7 @@ namespace Weapons
 
         private void AttackNow()
         {
-            Instantiate (projectile, PlayerController.Player.transform.position, Quaternion.identity);
+            Instantiate(projectile, PlayerController.Player.transform.position, Quaternion.identity);
         }
     }
 }

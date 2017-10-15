@@ -1,13 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DestroyAfterSeen : MonoBehaviour {
-	void Start () {}
-	void Update () {}
-	void OnBecameVisible() {}
+public class DestroyAfterSeen : MonoBehaviour
+{
+    void Start()
+    {
+    }
 
-	void OnBecameInvisible() {
-		Destroy (gameObject);
-	}
+    void Update()
+    {
+    }
+
+    void OnBecameVisible()
+    {
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

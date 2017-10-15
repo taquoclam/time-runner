@@ -107,23 +107,23 @@ public class PlayerController : MonoBehaviour
         // die from spike
         if (name.StartsWith("normal"))
         {
-            damage();
+            Damage();
         }
 
         // die from enemies
         string tag = coll.gameObject.tag.ToLower();
         if (tag.StartsWith("enemy"))
         {
-            damage();
+            Damage();
         }
     }
 
-    void damage()
+    void Damage()
     {
         ParticleSystem particles =
             Instantiate(damageParticle, myRigidbody.transform.position, myRigidbody.transform.rotation);
         Destroy(particles, 1);
-        myHeartControl.damagePlayer(1);
+        myHeartControl.DamagePlayer(1);
     }
 
     void Die()

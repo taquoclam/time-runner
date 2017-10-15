@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemiesAbility : MonoBehaviour
 {
@@ -33,7 +31,7 @@ public class EnemiesAbility : MonoBehaviour
                 {
                     print("hello");
                     for (int y = 0; y < attributes.Length; y++) // run each attribute 
-                                                                // todo: work in progress.
+                        // todo: work in progress.
                     {
                         string[] attribute = attributes[i].Split('+');
                         int height = 6; // default setting for jumper
@@ -57,12 +55,11 @@ public class EnemiesAbility : MonoBehaviour
                             body.velocity = new Vector2(0, GameControl.instance.scrollSpeed * height * speed);
                         }
                     }
-
                 }
                 if (power.Equals("b")) // power is boomer
                 {
                     for (int y = 0; y < attributes.Length; y++) // run each attribute 
-                                                                // todo: work in progress.
+                        // todo: work in progress.
                     {
                         string[] attribute = attributes[i].Split('+');
                         int spread = 6; // default setting for boomer
@@ -86,7 +83,6 @@ public class EnemiesAbility : MonoBehaviour
                             ;
                         }
                     }
-
                 }
             }
         }
@@ -95,6 +91,5 @@ public class EnemiesAbility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
     }
 }

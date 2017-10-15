@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Projectiles
 {
@@ -9,7 +7,7 @@ namespace Projectiles
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            rb.velocity = PlayerController.DirectionOfMouse() * 10.0f;            
+            rb.velocity = PlayerController.DirectionOfMouse() * 10.0f;
         }
     }
 }
