@@ -25,8 +25,8 @@ public class Type3 : MonoBehaviour
         }
         if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
         {
-            Destroy(gameObject);
             clone.DestroySelf();
+            Destroy(gameObject);
         }
     }
     void Fire1()

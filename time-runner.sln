@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-runner", "Assembly-CSharp.csproj", "{9483569B-416E-A968-122B-3E65D5C22AF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{9483569B-416E-A968-122B-3E65D5C22AF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-runner", "Assembly-CSharp-Editor-firstpass.csproj", "{C0C737BC-6A2E-45C8-8673-1D05CA218205}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{C0C737BC-6A2E-45C8-8673-1D05CA218205}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
