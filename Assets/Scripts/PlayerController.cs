@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
         }
 
         // animations
-        myAnim.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
         myAnim.SetBool("Grounded", isGrounded);
 
         if (myHeartControl.healthCount <= 0)
