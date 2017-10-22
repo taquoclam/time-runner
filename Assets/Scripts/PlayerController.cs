@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem damageParticle;
     private Animator myAnim;
 
+	public AudioSource jumpSound;
+	public AudioSource deathSound;
+
     private bool jumpHeld = false;
 
     // inventory
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
             jumpHeld = true;
+			jumpSound.Play ();
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -127,9 +131,7 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        ParticleSystem particles =
-            Instantiate(damageParticle, myRigidbody.transform.position, myRigidbody.transform.rotation);
-        Destroy(particles, 1);
+		deathSound.Play ();
         Invoke("ResetScene", 1);
     }
 

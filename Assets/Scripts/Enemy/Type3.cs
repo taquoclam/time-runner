@@ -5,10 +5,12 @@ public class Type3 : MonoBehaviour
     private bool isGrounded = false;
     public EnemiesWeapons weapon;
     private EnemiesWeapons clone;
+	public AudioSource deathSound;
+
     // Use this for initialization
     void Start()
     {
-        Equip(weapon);
+
     }
 
     // Update is called once per frame
@@ -23,20 +25,15 @@ public class Type3 : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
+        if (col.gameObject.tag.ToLower().StartsWith("player"))
         {
             clone.DestroySelf();
+			deathSound.Play ();
             Destroy(gameObject);
         }
     }
     void Fire1()
     {
         weapon.Attack();
-    }
-
-    // equip weapon
-    void Equip(EnemiesWeapons weapon)
-    {
-        clone = Instantiate(weapon, transform.position, Quaternion.identity);
     }
 }
