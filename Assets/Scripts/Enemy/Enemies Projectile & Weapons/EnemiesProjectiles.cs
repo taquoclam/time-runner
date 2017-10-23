@@ -11,10 +11,7 @@ namespace Projectiles
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            float x = player.transform.position.x - transform.position.x;
-            float y = player.transform.position.y - transform.position.y;
-            rb.velocity = new Vector2(x, y) * 1.0f;
+            rb.velocity = PlayerController.DirectionFrom(transform.position) * 3.0f - new Vector2(5.0f, 0);
         }
 
         void OnTriggerEnter2D(Collider2D coll)

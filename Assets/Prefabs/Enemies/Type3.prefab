@@ -23,10 +23,11 @@ GameObject:
   - component: {fileID: 114057498856430096}
   - component: {fileID: 114609410063193688}
   - component: {fileID: 50085005156516742}
-  - component: {fileID: 61027961940324652}
+  - component: {fileID: 114823069235190938}
   - component: {fileID: 114898658092754990}
-  - component: {fileID: 58413218820481040}
   - component: {fileID: 82158756952457858}
+  - component: {fileID: 61078027740012148}
+  - component: {fileID: 58538356469960042}
   m_Layer: 0
   m_Name: Type3
   m_TagString: Enemy
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235601830528102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.12, y: -3.36, z: 0}
+  m_LocalPosition: {x: -13.342928, y: 1.5785964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,7 +55,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235601830528102}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -67,7 +68,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58413218820481040
+--- !u!58 &58538356469960042
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,14 +76,14 @@ CircleCollider2D:
   m_GameObject: {fileID: 1235601830528102}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dd3e6013006954e5f88f8f63ab2a8060, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!61 &61027961940324652
+  m_Radius: 0.64
+--- !u!61 &61078027740012148
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -105,7 +106,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
 --- !u!82 &82158756952457858
 AudioSource:
@@ -207,6 +208,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 120ad90bfffaf4b9da06698ab9d021c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114823069235190938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235601830528102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b78f3e6d368494eb57d294de5a43a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114898658092754990
