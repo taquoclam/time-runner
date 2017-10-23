@@ -12,5 +12,14 @@ namespace Projectiles
             float y = player.transform.position.y - transform.position.y;
             rb.velocity = new Vector2(x, y) * 1f;
         }
+        private void OnTriggerEnter2D(Collider2D coll)
+        {
+
+            var tag = coll.gameObject.tag.ToLower();
+
+            // die from projectile (todo: health, death animation)
+            if (tag.StartsWith("playerprojectile") || tag.StartsWith("player"))
+                Destroy(gameObject);
+        }
     }
 }
