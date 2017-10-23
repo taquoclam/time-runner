@@ -28,16 +28,15 @@ public class Type1 : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag.ToLower().StartsWith("ground"))
+        string tag = col.gameObject.tag.ToLower();
+        if (tag.StartsWith("ground"))
         {
             isGrounded = true;
         }
-<<<<<<< HEAD
-=======
-        if (col.gameObject.tag.ToLower().StartsWith("player"))
+        if (tag.StartsWith("player"))
         {
-            Destroy(gameObject);
+            if(gameObject != null)
+                Destroy(gameObject);
         }
->>>>>>> Testing
     }
 }

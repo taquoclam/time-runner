@@ -30,14 +30,12 @@ public class Type2 : MonoBehaviour
         {
             isGrounded = true;
         }
-<<<<<<< HEAD
-=======
 
         // Attacked by players
-        if (tag.StartsWith("player"))
+        if (tag.StartsWith("player") || tag.StartsWith("enemy"))
         {
-            Destroy(gameObject);
+            if (gameObject != null)
+                Destroy(gameObject);
         }
->>>>>>> Testing
     }
 }

@@ -25,12 +25,12 @@ public class Type3 : MonoBehaviour
         {
             isGrounded = true;
         }
-<<<<<<< HEAD
-=======
         if (tag.StartsWith("player") || tag.StartsWith("playerprojectile"))
         {
-            Destroy(gameObject);
-            clone.DestroySelf();
+            if (gameObject != null)
+                Destroy(gameObject);
+            if (clone != null)
+                clone.DestroySelf();
         }
     }
     private void OnTriggerEnter2D(Collider2D coll)
@@ -41,10 +41,11 @@ public class Type3 : MonoBehaviour
         // die from projectile (todo: health, death animation)
         if (tag.StartsWith("playerprojectile"))
         {
-            Destroy(gameObject);
-            clone.DestroySelf();
+            if (gameObject != null)
+                Destroy(gameObject);
+            if (clone != null)     
+                clone.DestroySelf();
         }
->>>>>>> Testing
     }
     void Fire1()
     {
