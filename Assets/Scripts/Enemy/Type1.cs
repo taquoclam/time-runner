@@ -32,5 +32,12 @@ public class Type1 : MonoBehaviour
         {
             isGrounded = true;
         }
+<<<<<<< HEAD
+=======
+        if (col.gameObject.tag.ToLower().StartsWith("player"))
+        {
+            Destroy(gameObject);
+        }
+>>>>>>> Testing
     }
 }

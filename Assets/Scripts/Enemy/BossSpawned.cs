@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BossSpawned : MonoBehaviour {
     private bool isDead = false;
     public int life = 100;
@@ -23,6 +23,7 @@ public class BossSpawned : MonoBehaviour {
             {
                 Destroy(gameObject);
                 isDead = true;
+                SceneManager.LoadScene("End");
             }
             else { life = life - 1; }
         }
