@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114222916471495582}
   - component: {fileID: 61225225276628634}
   - component: {fileID: 58730022588516694}
-  - component: {fileID: 82483238052864774}
+  - component: {fileID: 82854598951801332}
   m_Layer: 0
   m_Name: Type1
   m_TagString: Enemy
@@ -108,7 +108,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!82 &82483238052864774
+--- !u!82 &82854598951801332
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -212,7 +212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 12
   jumpTime: 0.045
-  deathSound: {fileID: 0}
 --- !u!114 &114307794292600466
 MonoBehaviour:
   m_ObjectHideFlags: 1

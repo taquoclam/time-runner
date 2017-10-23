@@ -5,7 +5,6 @@ public class Type3 : MonoBehaviour
     private bool isGrounded = false;
     public EnemiesWeapons weapon;
     private EnemiesWeapons clone;
-	public AudioSource deathSound;
 
     // Use this for initialization
     void Start()
@@ -24,12 +23,6 @@ public class Type3 : MonoBehaviour
         if (col.gameObject.tag.ToLower().StartsWith("ground"))
         {
             isGrounded = true;
-        }
-        if (col.gameObject.tag.ToLower().StartsWith("player"))
-        {
-            clone.DestroySelf();
-			deathSound.Play ();
-            Destroy(gameObject);
         }
     }
     void Fire1()

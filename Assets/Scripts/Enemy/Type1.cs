@@ -8,7 +8,6 @@ public class Type1 : MonoBehaviour
     private bool firstJumped = true;
     private Rigidbody2D body;
     private float startTime = 0;
-	public AudioSource deathSound;
 
     // Use this for initialization
     void Start()
@@ -32,11 +31,6 @@ public class Type1 : MonoBehaviour
         if (col.gameObject.tag.ToLower().StartsWith("ground"))
         {
             isGrounded = true;
-        }
-        if (col.gameObject.tag.ToLower().StartsWith("player"))
-        {
-			deathSound.Play ();
-            Destroy(gameObject);
         }
     }
 }
