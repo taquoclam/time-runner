@@ -140,14 +140,24 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // Get x-y unit vector from player to mouse position
-    public static Vector2 DirectionOfMouse()
+    // Direction from player to point
+    public static Vector2 DirectionTo(Vector2 point)
     {
-        var mousePos = Input.mousePosition;
-        mousePos.z = 0;
-        Vector2 direction = Camera.main.ScreenToWorldPoint(mousePos) - Player.transform.position;
+        Vector2 direction = point - (Vector2) Player.transform.position;
         direction.Normalize();
         return direction;
+    }
+
+    // Direction from point to player
+    public static Vector2 DirectionFrom(Vector2 point)
+    {
+        return -DirectionTo(point);
+    }
+
+    // Direction from player to mouse
+    public static Vector2 DirectionOfMouse()
+    {
+        return DirectionTo(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
     // Shoot.
