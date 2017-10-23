@@ -569,11 +569,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Dodge weights by solving quizs
+  m_Text: '- Space to Jump
 
-    - Use WASD or arrow keys to move
-
-    - Space to Jump
+    - Left click on screen to shoot
 
 '
 --- !u!222 &1296781195
@@ -649,7 +647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quizs about me
+  m_Text: Time Runner
 --- !u!222 &1549878971
 CanvasRenderer:
   m_ObjectHideFlags: 0

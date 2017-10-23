@@ -4,11 +4,13 @@ public class EnemyController : MonoBehaviour
 {
 
 	private SoundManager mySoundManager;
+	private ScoreManager myScoreManager;
 
     // Use this for initialization
     void Awake()
     {
 		mySoundManager = FindObjectOfType<SoundManager>();
+		myScoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class EnemyController : MonoBehaviour
         // die from projectile (todo: health, death animation)
         if (tag.StartsWith("playerprojectile"))
         {
+			myScoreManager.addScore (4);
 			die ();
         }
     }

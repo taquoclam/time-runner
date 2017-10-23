@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
         myHeartControl = FindObjectOfType<HeartControl>();
-        jumpSpeed = 12;
+        jumpSpeed = 9;
 
         Equip(defaultWeapon);
     }
