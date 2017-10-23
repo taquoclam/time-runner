@@ -26,5 +26,9 @@ namespace Weapons
         {
             Instantiate(projectile, PlayerController.Player.transform.position, Quaternion.identity);
         }
+        public void Die()
+        {
+            Destroy(this);
+        }
     }
 }

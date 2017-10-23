@@ -17,16 +17,22 @@ public class Type2 : MonoBehaviour
     {
         if (isGrounded)
         {
-            body.AddForce(new Vector2(-speed, 0));
+            body.velocity = new Vector2(-speed, 0);
         }
     }
+
+    // On condition that collide with objescts
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag.ToLower().StartsWith("ground"))
+        string tag = col.gameObject.tag.ToLower();
+        // Is touching ground
+        if (tag.StartsWith("ground"))
         {
             isGrounded = true;
         }
-        if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
+
+        // Attacked by players
+        if (tag.StartsWith("player"))
         {
             Destroy(gameObject);
         }

@@ -18,6 +18,7 @@ public abstract class EnemiesWeapons : MonoBehaviour {
     }
     public void DestroySelf()
     {
-        Destroy(gameObject);
+        if (gameObject != null)
+            Destroy(gameObject);
     }
 }

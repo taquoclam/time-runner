@@ -36,7 +36,8 @@ namespace EnemiesWp
         }
         public void destroySelf()
         {
-            Destroy(gameObject);
+            print("no");
+            Destroy(this);
         }
     }
 }

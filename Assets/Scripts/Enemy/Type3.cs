@@ -19,11 +19,24 @@ public class Type3 : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag.ToLower().StartsWith("ground"))
+        string tag = col.gameObject.tag.ToLower();
+        if (tag.StartsWith("ground"))
         {
             isGrounded = true;
         }
-        if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
+        if (tag.StartsWith("player") || tag.StartsWith("playerprojectile"))
+        {
+            Destroy(gameObject);
+            clone.DestroySelf();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+
+        var tag = coll.gameObject.tag.ToLower();
+
+        // die from projectile (todo: health, death animation)
+        if (tag.StartsWith("playerprojectile"))
         {
             Destroy(gameObject);
             clone.DestroySelf();

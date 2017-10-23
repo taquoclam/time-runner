@@ -31,7 +31,7 @@ public class Type1 : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (col.gameObject.tag.ToLower().StartsWith("player") || col.gameObject.tag.ToLower().StartsWith("enemy"))
+        if (col.gameObject.tag.ToLower().StartsWith("player"))
         {
             Destroy(gameObject);
         }
