@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Items;
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 /**
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
     void PickUp(GameObject goItem)
     {
         Item item = goItem.GetComponent<Item>();
-        Assert.NotNull(item, goItem.name + "'s tag starts with item but is not an item");
+        Assert.IsNotNull(item, goItem.name + "'s tag starts with item but is not an item");
 
         switch (item.GetType())
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour
@@ -42,10 +42,10 @@ public class GameControl : MonoBehaviour
             foreach (GameObject wep in weps)
             {
                 Weapon weapon = wep.GetComponent<Weapon>();
-                Assert.NotNull(weapon, wep.name + " has no corresponding Weapon script");
+                Assert.IsNotNull(weapon, wep.name + " has no corresponding Weapon script");
                 Weapons.Add(wep.name, wep.GetComponent<Weapon>());
             }
-            Assert.IsNotEmpty(Weapons);            
+            Assert.IsTrue(Weapons.Count > 0);
         }
         
         // Spawn boss at appropriate time
@@ -109,10 +109,10 @@ public class GameControl : MonoBehaviour
         static Layers()
         {
             // sanity check, runs once
-            Assert.Greater(Background, -1);
-            Assert.Greater(Ground, -1);
-            Assert.Greater(Player, -1);
-            Assert.Greater(Enemies, -1);
+            Assert.IsTrue(Background != -1);
+            Assert.IsTrue(Ground != -1);
+            Assert.IsTrue(Player != -1);
+            Assert.IsTrue(Enemies != -1);
         }
     }
 
