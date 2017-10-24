@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Items;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -87,10 +89,18 @@ public class PlayerController : MonoBehaviour
     {
         // debug
         string name = coll.gameObject.name.ToLower();
+        string tag = coll.gameObject.tag.ToLower();
         if (!collidedWith.Contains(name))
         {
             collidedWith.Add(name);
-            Debug.Log(gameObject.name + " collided with: " + name);
+            Debug.LogFormat("{0} collided with '{1}' [{2}]", gameObject.name, name, tag);
+        }
+        
+        // pick up items
+        if (tag.StartsWith("item"))
+        {
+            Debug.LogFormat("Picking up {0}", coll.gameObject.name);
+            PickUp(coll.gameObject);
         }
     }
 
@@ -119,6 +129,24 @@ public class PlayerController : MonoBehaviour
         {
             Damage();
         }
+    }
+
+    void PickUp(GameObject goItem)
+    {
+        Item item = goItem.GetComponent<Item>();
+        Assert.NotNull(item, goItem.name + "'s tag starts with item but is not an item");
+
+        switch (item.GetType())
+        {
+            case Item.Type.Weapon:
+                Equip(goItem.GetComponent<Weapon>());
+                break;
+            default:
+                Debug.LogErrorFormat("Unhandled item type {0}", item.GetType());
+                break;
+        }
+        
+        Destroy(goItem);
     }
 
     void Damage()

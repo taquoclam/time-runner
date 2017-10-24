@@ -28,9 +28,9 @@ public class EnimesSpawners : MonoBehaviour
         for (int i = 0; i < spawners.Length; i++)
         {
             width[i] = spawners[i].GetComponent<BoxCollider2D>().size.x;
-            spawnRateMS[i] = Mathf.Abs(spawnRate[i] / GameControl.instance.scrollSpeed);
-            minimumSpaceMS[i] = Mathf.Abs(minimumSpace[i] / GameControl.instance.scrollSpeed);
-            Invoke("Spawn", Mathf.Abs(width[i] / GameControl.instance.scrollSpeed));
+            spawnRateMS[i] = Mathf.Abs(spawnRate[i] / GameControl.scrollSpeed);
+            minimumSpaceMS[i] = Mathf.Abs(minimumSpace[i] / GameControl.scrollSpeed);
+            Invoke("Spawn", Mathf.Abs(width[i] / GameControl.scrollSpeed));
         }
     }
 
@@ -43,7 +43,7 @@ public class EnimesSpawners : MonoBehaviour
     void Spawn()
     {
         int randomEnemy = Random.Range(1, maxEnemy);
-        if (spawnRateMS[randomEnemy] >= Random.Range(0.0001f, 1f) && enemiesCount < maxEnemy)
+        if ((spawnRateMS[randomEnemy] == 1 || spawnRateMS[randomEnemy] >= Random.value) && enemiesCount < maxEnemy)
         {
             currentEnemy[enemiesCount] = Instantiate(spawners[randomEnemy],
                 new Vector3(transform.position.x, spawnPosition[randomEnemy], transform.position.z),

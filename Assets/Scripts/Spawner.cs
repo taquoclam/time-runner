@@ -18,11 +18,11 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         width = toSpawn.GetComponent<BoxCollider2D>().size.x;
-        spawnRateMs = Mathf.Abs(width / GameControl.instance.scrollSpeed);
-        minimumSpaceMs = Mathf.Abs(minimumSpace / GameControl.instance.scrollSpeed);
+        spawnRateMs = Mathf.Abs(width / GameControl.scrollSpeed);
+        minimumSpaceMs = Mathf.Abs(minimumSpace / GameControl.scrollSpeed);
 
         // spawn whilst preventing overlap
-        Invoke("Spawn", Mathf.Abs(width / GameControl.instance.scrollSpeed));
+        Invoke("Spawn", Mathf.Abs(width / GameControl.scrollSpeed));
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        if (spawnRate >= Random.Range(0.0001f, 1f) && inARow < maxInARow)
+        if ((spawnRate == 1 || spawnRate >= Random.value) && inARow < maxInARow)
         {
             Instantiate(toSpawn, new Vector3(transform.position.x, spawnPosition, transform.position.z),
                 Quaternion.identity);

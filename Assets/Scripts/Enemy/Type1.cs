@@ -19,22 +19,18 @@ public class Type1 : MonoBehaviour
     {
         if (isGrounded && Time.time > startTime)
         {
-            body.AddForce(new Vector2(0, height*64));
+            body.AddForce(new Vector2(0, height * 64));
             isGrounded = false;
             startTime = Time.time + jumpTime;
         }
     }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         string tag = col.gameObject.tag.ToLower();
         if (tag.StartsWith("ground"))
         {
             isGrounded = true;
-        }
-        if (tag.StartsWith("player"))
-        {
-            if(gameObject != null)
-                Destroy(gameObject);
         }
     }
 }

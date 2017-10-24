@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour
 
 	private SoundManager mySoundManager;
 	private ScoreManager myScoreManager;
+	private float itemSpawnRate = 1f; // todo: not 1
 
     // Use this for initialization
     void Awake()
@@ -33,6 +34,15 @@ public class EnemyController : MonoBehaviour
 
 	public void die(){
 		mySoundManager.levelOneDied ();
+		if (itemSpawnRate == 1 || itemSpawnRate > Random.value)
+		{
+			spawnRandomItem();
+		}
 		Destroy (gameObject);
+	}
+
+	private void spawnRandomItem()
+	{
+		Instantiate(Util.RandomInDict(GameControl.Weapons), transform.position, Quaternion.identity);
 	}
 }
