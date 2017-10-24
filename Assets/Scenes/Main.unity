@@ -761,7 +761,7 @@ Transform:
   m_Children:
   - {fileID: 761852354}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432914868
 GameObject:
@@ -1280,6 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a01e6129122240cf81859b2da095f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 1235601830528102, guid: 80f0b1e2aaf6f674f9bcae1538402424, type: 2}
 --- !u!4 &884000690
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,48 +1408,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1044162707}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &930200306
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 930200308}
-  - component: {fileID: 930200307}
-  m_Layer: 0
-  m_Name: BossSpawners
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &930200307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 930200306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b85471d3c2f21b46a1c58487caf00af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 1235601830528102, guid: af0fc02229878c94c9d8e3192cc43ef5, type: 2}
-  waitTime: 5
---- !u!4 &930200308
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 930200306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973534168
 GameObject:

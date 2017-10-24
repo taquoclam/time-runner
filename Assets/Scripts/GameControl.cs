@@ -1,12 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour
 {
+    // todo: Move this to some kind of separate LevelControl class, maybe separate LevelControl for each level
+    public GameObject boss;
+    
     public static GameControl instance;
     public static float scrollSpeed = -5f;
+    private static float bossSpawnTime = 10f;
     public static Dictionary<string, Weapon> Weapons = new Dictionary<string, Weapon>();
 
     // Init
@@ -42,6 +47,54 @@ public class GameControl : MonoBehaviour
             }
             Assert.IsNotEmpty(Weapons);            
         }
+        
+        // Spawn boss at appropriate time
+        Invoke("SpawnBoss", bossSpawnTime);
+    }
+
+    // TODO: Make this actually work!
+    void DisableSpawners()
+    {
+        foreach (var spawner in FindObjectsOfType<Spawner>())
+        {
+            spawner.enabled = false;
+        }
+        foreach (var spawner in FindObjectsOfType<EnimesSpawners>())
+        {
+            spawner.enabled = false;
+        }
+    }
+
+    public void SpawnBoss()
+    {
+        DisableSpawners();
+        Invoke("SpawnBossNow", 2);
+    }
+
+    void SpawnBossNow()
+    {
+        var maxX = getMaxX();
+        var spawnLocation = new Vector3(maxX + this.boss.GetComponent<SpriteRenderer>().bounds.size.x/2, -2f, 0);
+        GameObject boss = Instantiate(this.boss, spawnLocation, Quaternion.identity);
+    }
+
+    // get largest visible x coordinate
+    public static float getMaxX()
+    {
+        // create a temporary plane parallel to the background
+        Plane zPlane = new Plane(Vector3.forward, Vector3.zero);
+
+        // Shoot ray from camera to top-right side of screen
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight));
+        float distance;
+
+        // get the hit point
+        if (zPlane.Raycast(ray, out distance))
+        {
+            return ray.GetPoint(distance).x;
+        }
+        Debug.LogError("Boss ray didn't hit plane!");
+        return 0;
     }
 
     // layer numbers
