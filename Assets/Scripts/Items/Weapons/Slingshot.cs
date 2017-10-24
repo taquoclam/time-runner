@@ -8,7 +8,7 @@ namespace Weapons
     {
         public Rigidbody2D projectile;
 
-        private TimeSpan useDelay = new TimeSpan((long) (TimeSpan.TicksPerSecond * 0.6));
+        private TimeSpan useDelay = new TimeSpan((long) (TimeSpan.TicksPerSecond * 0.3));
         private Stopwatch stopwatch = new Stopwatch();
 
         // attack if enough time has passed

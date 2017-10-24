@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
@@ -6,6 +9,10 @@ public class EnemyController : MonoBehaviour
 	private SoundManager mySoundManager;
 	private ScoreManager myScoreManager;
 	private float itemSpawnRate = 1f; // todo: not 1
+	
+	// ensure we die & drop item only once
+	private Object deathLock = new Object();
+	private bool dead = false;
 
     // Use this for initialization
     void Awake()
@@ -33,6 +40,15 @@ public class EnemyController : MonoBehaviour
     }
 
 	public void die(){
+		lock (deathLock)
+		{
+			if (dead)
+			{
+				return;
+			}
+			dead = true;
+		}
+		
 		mySoundManager.levelOneDied ();
 		if (itemSpawnRate == 1 || itemSpawnRate > Random.value)
 		{

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50383351737412068}
   - component: {fileID: 58654356894524108}
   - component: {fileID: 114479595682422994}
-  - component: {fileID: 114072060908541596}
+  - component: {fileID: 114491524705852104}
   m_Layer: 9
   m_Name: Axe
   m_TagString: PlayerProjectile
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819085352894580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.1, y: -1.09, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.735546, y: -1.7733752, z: -2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,18 +78,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &114072060908541596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1819085352894580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 983e7b7514e14967983a9bc43f02be33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.15
 --- !u!114 &114479595682422994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +88,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b4ccb82a49648b4eb209bdf4393aece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114491524705852104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819085352894580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc398761962473bb1d647e2b06b07f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212608497013443428

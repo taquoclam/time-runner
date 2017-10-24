@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - EnemyProjectile
   - Shooter
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - TOP
   - Background
   - Enemies
-  - 
+  - Items
   - 
   - 
   - 
