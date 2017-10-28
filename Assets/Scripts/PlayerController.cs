@@ -49,18 +49,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        //variable jump height
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
-            jumpHeld = true;
-			jumpSound.Play ();
-        }
-        else if (Input.GetButtonUp("Jump"))
-        {
-            jumpHeld = false;
-        }
+            //variable jump height
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
+                jumpHeld = true;
+                jumpSound.Play();
+            }
+            else if (Input.GetButtonUp("Jump"))
+            {
+                jumpHeld = false;
+            }
 
         if (!isGrounded && !jumpHeld)
         {

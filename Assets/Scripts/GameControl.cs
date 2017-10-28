@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour
@@ -13,7 +14,8 @@ public class GameControl : MonoBehaviour
     public static float scrollSpeed = -5f;
     private static float bossSpawnTime = 10f;
     public static Dictionary<string, Weapon> Weapons = new Dictionary<string, Weapon>();
-
+    public Canvas pauseMenu;
+    private bool pause;
     // Init
     void Awake()
     {
@@ -26,6 +28,8 @@ public class GameControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        pauseMenu.enabled = pause;
 
         // Layer interaction
         Physics2D.IgnoreLayerCollision(Layers.Enemies, Layers.Enemies); // so enemies don't bump into each other
@@ -124,5 +128,25 @@ public class GameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Press escape to pause a game
+        if (Input.GetButtonDown("Cancel"))
+        {
+            SetUpPauseMenu();
+            
+        }
+    }
+    public void SetUpPauseMenu()
+    {
+        pause = !pause;
+        pauseMenu.enabled = !pause;
+        Time.timeScale = (pause) ? 1.00f : 0.00f;
+    }
+    public bool getPauseSetting()
+    {
+        return pause;
+    }
+    public void exit()
+    {
+        Application.Quit();
     }
 }

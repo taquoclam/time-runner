@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour {
 
 	public AudioSource levelOneEnemyDeath;
+    public AudioSource CheckSound;
+    public Slider slider;
 
 	// Use this for initialization
 	void Start () {
@@ -19,4 +22,14 @@ public class SoundManager : MonoBehaviour {
 	public void levelOneDied(){
 		levelOneEnemyDeath.Play ();
 	}
+
+    // Set volume for sound 
+    public void SetLevel()
+    {
+        AudioListener.volume = slider.value;
+    }
+    public void checkSound()
+    {
+        CheckSound.Play();
+    }
 }
