@@ -57,4 +57,10 @@ public class EnimesSpawners : MonoBehaviour
             Invoke("Spawn", minimumSpaceMS[randomEnemy]);
         }
     }
+    public void DisableSelf()
+    {
+        gameObject.SetActiveRecursively(false);
+        this.enabled = false;
+        CancelInvoke();
+    }
 }

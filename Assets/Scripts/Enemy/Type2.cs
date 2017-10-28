@@ -32,7 +32,7 @@ public class Type2 : MonoBehaviour
         }
 
         // Attacked by players
-        if (tag.StartsWith("player") || tag.StartsWith("enemy"))
+        if (tag.StartsWith("player"))
         {
             if (gameObject != null)
                 Destroy(gameObject);

@@ -44,4 +44,10 @@ public class Spawner : MonoBehaviour
             Invoke("Spawn", minimumSpaceMs);
         }
     }
+    public void DisableSelf()
+    {
+        gameObject.SetActiveRecursively(false);
+        this.enabled = false;
+        CancelInvoke();
+    }
 }

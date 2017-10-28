@@ -57,11 +57,11 @@ public class GameControl : MonoBehaviour
     {
         foreach (var spawner in FindObjectsOfType<Spawner>())
         {
-            spawner.enabled = false;
+            spawner.DisableSelf();
         }
         foreach (var spawner in FindObjectsOfType<EnimesSpawners>())
         {
-            spawner.enabled = false;
+            spawner.DisableSelf();
         }
     }
 
