@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Assertions;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour
@@ -15,7 +14,7 @@ public class GameControl : MonoBehaviour
     private static float bossSpawnTime = 10f;
     public static Dictionary<string, Weapon> Weapons = new Dictionary<string, Weapon>();
     public Canvas pauseMenu;
-    private bool pause;
+    private STATE state;
     // Init
     void Awake()
     {
@@ -29,7 +28,6 @@ public class GameControl : MonoBehaviour
             Destroy(gameObject);
         }
 
-        pauseMenu.enabled = pause;
 
         // Layer interaction
         Physics2D.IgnoreLayerCollision(Layers.Enemies, Layers.Enemies); // so enemies don't bump into each other
@@ -123,13 +121,15 @@ public class GameControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        state = STATE.PLAY; 
+        pauseMenu.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Press escape to pause a game
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyUp("p"))
         {
             SetUpPauseMenu();
             
@@ -137,13 +137,22 @@ public class GameControl : MonoBehaviour
     }
     public void SetUpPauseMenu()
     {
-        pause = !pause;
-        pauseMenu.enabled = !pause;
-        Time.timeScale = (pause) ? 1.00f : 0.00f;
+        
+        if (state == STATE.PLAY)
+        {
+            state = STATE.PAUSE;
+            pauseMenu.enabled = true;
+            Time.timeScale = 0.00f;
+        } else if (state == STATE.PAUSE)
+        {
+            state = STATE.PLAY;
+            pauseMenu.enabled = false;
+            Time.timeScale = 1.00f;
+        }
     }
-    public bool getPauseSetting()
+    public STATE getGameState()
     {
-        return pause;
+        return state;
     }
     public void exit()
     {

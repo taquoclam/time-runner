@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 	public AudioSource deathSound;
 
     private bool jumpHeld = false;
-
+    private STATE gameState;
     // inventory
     private Weapon weapon;
 
@@ -49,7 +49,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-            //variable jump height
+
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>().getGameState();
+        //variable jump height
+        if (gameState == STATE.PLAY)
+        {
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
@@ -61,23 +65,24 @@ public class PlayerController : MonoBehaviour
                 jumpHeld = false;
             }
 
-        if (!isGrounded && !jumpHeld)
-        {
-            myRigidbody.AddForce(new Vector2(0, -12));
-        }
+            if (!isGrounded && !jumpHeld)
+            {
+                myRigidbody.AddForce(new Vector2(0, -12));
+            }
 
-        // animations
-        myAnim.SetBool("Grounded", isGrounded);
+            // animations
+            myAnim.SetBool("Grounded", isGrounded);
 
-        if (myHeartControl.healthCount <= 0)
-        {
-            Die();
-        }
+            if (myHeartControl.healthCount <= 0)
+            {
+                Die();
+            }
 
-        // shooting
-        if (Input.GetButtonDown("Fire1") || Input.GetButton("Fire1"))
-        {
-            Fire1();
+            // shooting
+            if (Input.GetButtonDown("Fire1") || Input.GetButton("Fire1"))
+            {
+                Fire1();
+            }
         }
     }
 
