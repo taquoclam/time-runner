@@ -10,7 +10,6 @@ public class EnimesSpawners : MonoBehaviour
     public float[] spawnersScore; // spawners' score after destroyed
 
     public float[] minimumSpace;
-    public GameObject boss;
 
     private float[] width; // spawner's width after each iteration
     private float[] minimumSpaceMS;
@@ -59,7 +58,7 @@ public class EnimesSpawners : MonoBehaviour
     }
     public void DisableSelf()
     {
-        gameObject.SetActiveRecursively(false);
+        gameObject.SetActive(false);
         this.enabled = false;
         CancelInvoke();
     }

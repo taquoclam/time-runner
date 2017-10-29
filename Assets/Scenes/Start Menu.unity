@@ -534,8 +534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -175, y: 166}
-  m_SizeDelta: {x: 298.8, y: 214.5}
+  m_AnchoredPosition: {x: -205.4, y: 160.9}
+  m_SizeDelta: {x: 359.5, y: 204.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296781194
 MonoBehaviour:
@@ -572,6 +572,8 @@ MonoBehaviour:
   m_Text: '- Space to Jump
 
     - Left click on screen to shoot
+
+    - Press p to pause and resume gameplay
 
 '
 --- !u!222 &1296781195

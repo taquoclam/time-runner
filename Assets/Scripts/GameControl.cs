@@ -129,7 +129,7 @@ public class GameControl : MonoBehaviour
     void Update()
     {
         // Press escape to pause a game
-        if (Input.GetKeyUp("p"))
+        if (Input.GetKeyUp("p") && !Input.GetButtonDown("Jump"))
         {
             SetUpPauseMenu();
             
@@ -140,6 +140,7 @@ public class GameControl : MonoBehaviour
         
         if (state == STATE.PLAY)
         {
+           
             state = STATE.PAUSE;
             pauseMenu.enabled = true;
             Time.timeScale = 0.00f;

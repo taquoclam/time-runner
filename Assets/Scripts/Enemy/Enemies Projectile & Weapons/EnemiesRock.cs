@@ -34,9 +34,5 @@ namespace EnemiesWp
             }
             
         }
-        public void DestroySelf()
-        {
-            Destroy(this);
-        }
     }
 }
