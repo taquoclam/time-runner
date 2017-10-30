@@ -3647,12 +3647,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 1235601830528102, guid: 446be9e1caa0ac845906c0074d4326eb, type: 2}
   - {fileID: 1235601830528102, guid: 6e32015b3778ca04b9c1ea988df4b1ed, type: 2}
   - {fileID: 1235601830528102, guid: 1acda070b3960e048b4e9f130f283a04, type: 2}
   - {fileID: 1235601830528102, guid: 5fc81230324c3f94b89568110199a3a4, type: 2}
   spawnPosition:
-  - 3.5
   - -3.5
   - -3.5
   - -3.5
@@ -3660,14 +3658,11 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
-  - 0.2
   spawnersScore:
   - 100
   - 200
   - 300
-  - 400
   minimumSpace:
-  - 3
   - 3
   - 3
   - 3
