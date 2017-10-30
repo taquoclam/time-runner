@@ -2,12 +2,13 @@
 
 namespace Projectiles
 {
-    public class EnimiesBomberProjectiles : EnemiesProjectiles
+    public class EnemiesBomberProjectiles : EnemiesProjectiles
     {
+        public float force = 5.0f;
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(0, -5.0f);
+            rb.velocity = new Vector2(0, -force);
         }
         private void OnTriggerEnter2D(Collider2D coll)
         {

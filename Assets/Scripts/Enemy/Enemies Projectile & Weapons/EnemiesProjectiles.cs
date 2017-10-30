@@ -8,12 +8,6 @@ namespace Projectiles
     {
         protected Rigidbody2D rb;
 
-        void Start()
-        {
-            rb = GetComponent<Rigidbody2D>();
-            rb.velocity = PlayerController.DirectionFrom(transform.position) * 5.0f - new Vector2(5.0f, 0);
-        }
-
         void OnTriggerEnter2D(Collider2D coll)
         {
 

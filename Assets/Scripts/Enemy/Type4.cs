@@ -1,17 +1,17 @@
-﻿using UnityEngine;
+﻿using Projectiles;
+using UnityEngine;
 
 public class Type4 : MonoBehaviour
 {
 
-    public EnemiesWeapons weapon;
-
+    public EnemiesBomberProjectiles weapon;
+    public float shootingRate = 0.5f;
     // Use this for initialization
     void Start()
     {
         if (weapon != null)
         {
-            
-            InvokeRepeating("Fire1", 0, 0.5f);
+            InvokeRepeating("Fire1", 0, shootingRate);
         }
     }
 
@@ -42,7 +42,6 @@ public class Type4 : MonoBehaviour
     }
     void Fire1()
     {
-        print("4 is shooting");
         Instantiate(weapon, transform.position, Quaternion.identity);
     }
 }

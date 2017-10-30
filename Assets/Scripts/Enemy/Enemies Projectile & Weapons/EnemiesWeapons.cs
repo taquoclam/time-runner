@@ -8,6 +8,7 @@ public abstract class EnemiesWeapons : MonoBehaviour {
     void Update()
     {
         // move weapon to player
+        Rigidbody2D enemies = gameObject.GetComponent<Rigidbody2D>();
 
         Type3[] shooters = FindObjectsOfType(typeof(Type3)) as Type3[];
         Type4[] bombers = FindObjectsOfType(typeof(Type4)) as Type4[];
