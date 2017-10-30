@@ -41,7 +41,7 @@ public class EnimesSpawners : MonoBehaviour
 
     void Spawn()
     {
-        int randomEnemy = Random.Range(1, maxEnemy);
+        int randomEnemy = Random.Range(0, spawners.Length);
         if ((spawnRateMS[randomEnemy] == 1 || spawnRateMS[randomEnemy] >= Random.value) && enemiesCount < maxEnemy)
         {
             currentEnemy[enemiesCount] = Instantiate(spawners[randomEnemy],

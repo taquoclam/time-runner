@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour
     }
     public void DisableSelf()
     {
-        gameObject.SetActiveRecursively(false);
+        gameObject.SetActive(false);
         this.enabled = false;
         CancelInvoke();
     }

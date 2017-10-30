@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour {
 
 	public AudioSource levelOneEnemyDeath;
     public AudioSource CheckSound;
-    public Slider slider;
+    public Slider volume;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +26,9 @@ public class SoundManager : MonoBehaviour {
     // Set volume for sound 
     public void SetLevel()
     {
-        AudioListener.volume = slider.value;
+        AudioListener.volume = volume.value;
     }
+
     public void checkSound()
     {
         CheckSound.Play();

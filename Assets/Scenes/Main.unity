@@ -927,7 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelOneEnemyDeath: {fileID: 761852353}
   CheckSound: {fileID: 838078484}
-  slider: {fileID: 1141348174}
+  volume: {fileID: 1141348174}
 --- !u!4 &357627068
 Transform:
   m_ObjectHideFlags: 0
@@ -942,6 +942,57 @@ Transform:
   - {fileID: 838078483}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &413496008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 413496010}
+  - component: {fileID: 413496009}
+  m_Layer: 0
+  m_Name: TestSpawner
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &413496009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413496008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cc759c94d54fa42a4656aae4adee3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawners:
+  - {fileID: 1235601830528102, guid: 5fc81230324c3f94b89568110199a3a4, type: 2}
+  spawnPosition:
+  - -3.5
+  spawnRate:
+  - 0.2
+  spawnersScore:
+  - 100
+  minimumSpace:
+  - 3
+  maxEnemy: 5
+--- !u!4 &413496010
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413496008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.87, y: 2.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432914868
 GameObject:
@@ -2651,7 +2702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tips:
   - You can hold space for higher jump.
-  - Hold your mouse because things will get ugly.
+  - Hold down your mouse because things will get ugly.
   - 'Do you think this game deserves a 4.0 if it is a school project? '
   - You can kill the first boss with 50 hits. Easy!
   - Different Weapons has different hit rate
@@ -3616,7 +3667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1901432221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3629,12 +3680,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 1235601830528102, guid: 3c3d0bba11d026b4db0ca924e5ce7176, type: 2}
+  - {fileID: 1235601830528102, guid: 446be9e1caa0ac845906c0074d4326eb, type: 2}
   - {fileID: 1235601830528102, guid: 6e32015b3778ca04b9c1ea988df4b1ed, type: 2}
   - {fileID: 1235601830528102, guid: 1acda070b3960e048b4e9f130f283a04, type: 2}
   - {fileID: 1235601830528102, guid: 5fc81230324c3f94b89568110199a3a4, type: 2}
   spawnPosition:
-  - -3.5
+  - 3.5
   - -3.5
   - -3.5
   - -3.5
@@ -3653,7 +3704,7 @@ MonoBehaviour:
   - 3
   - 3
   - 3
-  maxEnemy: 4
+  maxEnemy: 5
 --- !u!4 &1901432222
 Transform:
   m_ObjectHideFlags: 0

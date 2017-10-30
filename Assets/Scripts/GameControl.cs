@@ -129,12 +129,14 @@ public class GameControl : MonoBehaviour
     void Update()
     {
         // Press escape to pause a game
-        if (Input.GetKeyUp("p") && !Input.GetButtonDown("Jump"))
+        if (Input.GetKeyUp("p"))
         {
             SetUpPauseMenu();
             
         }
     }
+
+    // Awake pause menu 
     public void SetUpPauseMenu()
     {
         
@@ -151,10 +153,14 @@ public class GameControl : MonoBehaviour
             Time.timeScale = 1.00f;
         }
     }
+
+    // return state of game
     public STATE getGameState()
     {
         return state;
     }
+
+    // quit application
     public void exit()
     {
         Application.Quit();

@@ -20,13 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4195264540246966}
   - component: {fileID: 212180463833910330}
-  - component: {fileID: 114035419727825578}
-  - component: {fileID: 114225760920186742}
-  - component: {fileID: 50851204648804890}
-  - component: {fileID: 58162376956448120}
-  m_Layer: 13
-  m_Name: Rock
-  m_TagString: Item
+  - component: {fileID: 114460488200199590}
+  - component: {fileID: 114769011472763602}
+  m_Layer: 12
+  m_Name: EnemyRock(Bomber)
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,48 +36,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585396716912764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.944331, y: -3.277554, z: -1}
+  m_LocalPosition: {x: 10, y: -3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50851204648804890
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1585396716912764}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &58162376956448120
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1585396716912764}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25
---- !u!114 &114035419727825578
+--- !u!114 &114460488200199590
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,12 +50,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585396716912764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 825c5a020a13496d8ced5e72c64fa8cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b4ccb82a49648b4eb209bdf4393aece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 50383351737412068, guid: 664a1c749db818947af308e96fd5faf8,
-    type: 2}
---- !u!114 &114225760920186742
+--- !u!114 &114769011472763602
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -100,9 +61,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585396716912764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 120ad90bfffaf4b9da06698ab9d021c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 802d58897f79e464db3ffb5edf575700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 1819085352894580, guid: 702665bed2169f04f979b6c3c9bc9497, type: 2}
 --- !u!212 &212180463833910330
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -132,10 +94,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -505432205
-  m_SortingLayer: 4
+  m_SortingLayerID: 383627737
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21301498, guid: ed55c512fc455440da5ab97f22b26f87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d294add29b8114f11ba437e2a0f6d871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
