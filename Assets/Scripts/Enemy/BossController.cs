@@ -1,11 +1,11 @@
 ﻿using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.VR.WSA;
 
 public class BossController : MonoBehaviour {
     public int life = 100;
-
     // ensure we die only once
     private Object deathLock = new Object();
     private bool dead = false;
