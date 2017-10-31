@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.VR.WSA;
-
+using Projectiles;
 public class BossController : MonoBehaviour {
     public int life = 100;
     // ensure we die only once
@@ -13,7 +13,9 @@ public class BossController : MonoBehaviour {
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private bool enteringScreen;
-
+    public EnemiesShooterProjectile weapon;
+    public float shootingRate;
+    public float jumpTime;
     // Use this for initialization
     void Start ()
     {
@@ -22,6 +24,9 @@ public class BossController : MonoBehaviour {
         rb.velocity = new Vector2(GameControl.scrollSpeed, 0);
 
         enteringScreen = true;
+        if (weapon != null)
+            InvokeRepeating("Fire", 0.0f, shootingRate);
+        //InvokeRepeating("Jump", 10.0f, jumpTime);
     }
 
     void Update()
@@ -61,5 +66,17 @@ public class BossController : MonoBehaviour {
         Destroy(gameObject);
         // todo: dim screen or something
         SceneManager.LoadScene("End");
+    }
+
+    public void Fire()
+    {
+        Instantiate(weapon, transform.position, Quaternion.identity);
+    }
+
+
+    //todo: Fix with time jump back to position again 
+    public void Jump()
+    {
+        rb.velocity = new Vector2(0.0f, 5.0f);
     }
 }

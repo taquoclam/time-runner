@@ -8,7 +8,7 @@ namespace Projectiles
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(-5.0f, -force);
+            rb.velocity = new Vector2(GameControl.scrollSpeed, -force);
         }
         private void OnTriggerEnter2D(Collider2D coll)
         {
