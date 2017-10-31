@@ -5,12 +5,13 @@ public class Type4 : MonoBehaviour
 {
 
     public EnemiesBomberProjectiles weapon;
-    public float shootingRate = 0.5f;
+    public float shootingRate;
     // Use this for initialization
     void Start()
     {
         if (weapon != null)
         {
+            
             InvokeRepeating("Fire1", 0, shootingRate);
         }
     }

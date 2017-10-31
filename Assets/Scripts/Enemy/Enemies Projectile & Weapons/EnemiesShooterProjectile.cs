@@ -2,7 +2,7 @@
 
 namespace Projectiles
 {
-    public class EnemiesRockPro: EnemiesProjectiles
+    public class EnemiesShooterProjectile: EnemiesProjectiles
     {
         void Start()
         {

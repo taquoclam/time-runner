@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
+using Projectiles;
 
 public class Type3 : MonoBehaviour
 {
-    public EnemiesWeapons weapon;
-    private EnemiesWeapons clone;
+    public EnemiesShooterProjectile weapon;
+    public float shootingRate;
 
     // Use this for initialization
     void Start()
     {
-
+        if (weapon != null)
+        {
+            InvokeRepeating("Fire1", 0, shootingRate);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (weapon != null)
-            Fire1();
     }
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -24,8 +26,6 @@ public class Type3 : MonoBehaviour
         {
             if (gameObject != null)
                 Destroy(gameObject);
-            if (clone != null)
-                clone.DestroySelf();
         }
     }
     private void OnTriggerEnter2D(Collider2D coll)
@@ -38,12 +38,10 @@ public class Type3 : MonoBehaviour
         {
             if (gameObject != null)
                 Destroy(gameObject);
-            if (clone != null)     
-                clone.DestroySelf();
         }
     }
     void Fire1()
     {
-        weapon.Attack();
+        Instantiate(weapon, transform.position, Quaternion.identity);
     }
 }

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114479595682422994}
   - component: {fileID: 114228778587706864}
   m_Layer: 12
-  m_Name: EnemiesPro
+  m_Name: EnemiesShooterProjectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

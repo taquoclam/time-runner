@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 114059673290263002, guid: 702665bed2169f04f979b6c3c9bc9497, type: 2}
-  shootingRate: 0.5
+  shootingRate: 0.15
 --- !u!212 &212651677494888760
 SpriteRenderer:
   m_ObjectHideFlags: 1
