@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
         // die from enemies
         string tag = coll.gameObject.tag.ToLower();
-        if (tag.StartsWith("enemy") || tag.StartsWith("weapon"))
+        if (tag.StartsWith("enemy") || tag.StartsWith("weapon") || tag.StartsWith("obstacles"))
         {
             Damage();
         }
