@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.Assertions;
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.CrossPlatformInput.PlatformSpecific;
 
 public class GameControl : MonoBehaviour
 {
     // todo: Move this to some kind of separate LevelControl class, maybe separate LevelControl for each level
     public GameObject boss;
-    
+
     public static GameControl instance;
     public static float scrollSpeed = -5f;
     private static float bossSpawnTime = 10f;
     public static Dictionary<string, Weapon> Weapons = new Dictionary<string, Weapon>();
     public Canvas pauseMenu;
     private STATE state;
+
     // Init
     void Awake()
     {
@@ -49,7 +51,7 @@ public class GameControl : MonoBehaviour
             }
             Assert.IsTrue(Weapons.Count > 0);
         }
-        
+
         // Spawn boss at appropriate time
         Invoke("SpawnBoss", bossSpawnTime);
     }
@@ -76,7 +78,7 @@ public class GameControl : MonoBehaviour
     void SpawnBossNow()
     {
         var maxX = getMaxX();
-        var spawnLocation = new Vector3(maxX + this.boss.GetComponent<SpriteRenderer>().bounds.size.x/2, -2f, 0);
+        var spawnLocation = new Vector3(maxX + this.boss.GetComponent<SpriteRenderer>().bounds.size.x / 2, -2f, 0);
         GameObject boss = Instantiate(this.boss, spawnLocation, Quaternion.identity);
     }
 
@@ -121,7 +123,7 @@ public class GameControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        state = STATE.PLAY; 
+        state = STATE.PLAY;
         pauseMenu.enabled = false;
     }
 
@@ -132,21 +134,19 @@ public class GameControl : MonoBehaviour
         if (Input.GetKeyUp("p"))
         {
             SetUpPauseMenu();
-            
         }
     }
 
     // Awake pause menu 
     public void SetUpPauseMenu()
     {
-        
         if (state == STATE.PLAY)
         {
-           
             state = STATE.PAUSE;
             pauseMenu.enabled = true;
             Time.timeScale = 0.00f;
-        } else if (state == STATE.PAUSE)
+        }
+        else if (state == STATE.PAUSE)
         {
             state = STATE.PLAY;
             pauseMenu.enabled = false;

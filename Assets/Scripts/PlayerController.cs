@@ -3,6 +3,7 @@ using Items;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 /**
  * ASSUME WE HAVE ONE PLAYER
@@ -41,7 +42,6 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myHeartControl = FindObjectOfType<HeartControl>();
         jumpSpeed = 9;
-
         Equip(defaultWeapon);
     }
 
@@ -49,18 +49,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>().getGameState();
-        //variable jump height
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>().getGameState(); // looks inefficient
+        
         if (gameState == STATE.PLAY)
         {
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            //variable jump height
+            if ((CrossPlatformInputManager.GetButtonDown("Jump") || CrossPlatformInputManager.GetButton("Jump")) && isGrounded)
             {
+                //variable jump height
                 myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
                 jumpHeld = true;
                 jumpSound.Play();
             }
-            else if (Input.GetButtonUp("Jump"))
+            else if (CrossPlatformInputManager.GetButtonUp("Jump"))
             {
                 jumpHeld = false;
             }
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // shooting
-            if (Input.GetButtonDown("Fire1") || Input.GetButton("Fire1"))
+            if (CrossPlatformInputManager.GetButtonDown("Fire1") || CrossPlatformInputManager.GetButton("Fire1"))
             {
                 Fire1();
             }
@@ -88,7 +89,6 @@ public class PlayerController : MonoBehaviour
 
     // debug: log all items player collides with, only once
     HashSet<string> collidedWith = new HashSet<string>();
-
     void OnCollisionEnter2D(Collision2D coll)
     {
         // debug
