@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     private STATE gameState;
     // inventory
     private Weapon weapon;
+    
+    // locks
+    private object jumpLock = new Object();
 
     // Use this for initialization
     void Start()
@@ -54,12 +57,12 @@ public class PlayerController : MonoBehaviour
         if (gameState == STATE.PLAY)
         {
             //variable jump height
-            if ((CrossPlatformInputManager.GetButtonDown("Jump") || CrossPlatformInputManager.GetButton("Jump")) && isGrounded)
+            if (CrossPlatformInputManager.GetButtonDown("Jump") && isGrounded)
             {
-                //variable jump height
-                myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
-                jumpHeld = true;
                 jumpSound.Play();
+                myRigidbody.AddForce(new Vector2(0, jumpSpeed * 64));
+                isGrounded = false;
+                jumpHeld = true;
             }
             else if (CrossPlatformInputManager.GetButtonUp("Jump"))
             {

@@ -4,24 +4,30 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.VR.WSA;
 using Projectiles;
-public class BossController : MonoBehaviour {
+
+public class BossController : MonoBehaviour
+{
     public int life = 100;
+
     // ensure we die only once
     private Object deathLock = new Object();
+
     private bool dead = false;
-    
-	private Animator myAnim;
+
+    private Animator myAnim;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private bool enteringScreen;
     public EnemiesShooterProjectile weapon;
     public float shootingRate;
+
     public float jumpTime;
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-		myAnim = GetComponent<Animator>();
+        myAnim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb.velocity = new Vector2(GameControl.scrollSpeed, 0);
 
@@ -34,7 +40,7 @@ public class BossController : MonoBehaviour {
     void Update()
     {
         // if already entered screen, stop entering
-        if (enteringScreen && (GameControl.getMaxX() > transform.position.x + sr.bounds.size.x/2))
+        if (enteringScreen && (GameControl.getMaxX() > transform.position.x + sr.bounds.size.x / 2))
         {
             enteringScreen = false;
             rb.velocity = Vector2.zero;
@@ -50,28 +56,30 @@ public class BossController : MonoBehaviour {
             {
                 die();
             }
-			else { damageBoss (); }
+            else
+            {
+                damageBoss();
+            }
         }
     }
 
-	public void damageBoss(){
-		myAnim.SetBool("damaged", true);
-		Invoke ("resetAnim", 0.3f);
-		life -= 1;
-	}
+    public void damageBoss()
+    {
+        myAnim.SetBool("damaged", true);
+        Invoke("resetAnim", 0.3f);
+        life -= 1;
+    }
 
-	public void resetAnim(){
-		myAnim.SetBool ("damaged", false);
-	}
+    public void resetAnim()
+    {
+        myAnim.SetBool("damaged", false);
+    }
 
     public void die()
     {
         lock (deathLock)
         {
-            if (dead)
-            {
-                return;
-            }
+            if (dead) return;
             dead = true;
         }
 

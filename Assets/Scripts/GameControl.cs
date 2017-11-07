@@ -12,7 +12,7 @@ public class GameControl : MonoBehaviour
 
     public static GameControl instance;
     public static float scrollSpeed = -5f;
-    private static float bossSpawnTime = 10f;
+    private static float bossSpawnTime = 20f;
     public static Dictionary<string, Weapon> Weapons = new Dictionary<string, Weapon>();
     public Canvas pauseMenu;
     private STATE state;
