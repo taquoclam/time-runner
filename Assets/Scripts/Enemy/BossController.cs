@@ -10,6 +10,7 @@ public class BossController : MonoBehaviour {
     private Object deathLock = new Object();
     private bool dead = false;
     
+	private Animator myAnim;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private bool enteringScreen;
@@ -20,6 +21,7 @@ public class BossController : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
+		myAnim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb.velocity = new Vector2(GameControl.scrollSpeed, 0);
 
@@ -48,9 +50,19 @@ public class BossController : MonoBehaviour {
             {
                 die();
             }
-            else { life -= 1; }
+			else { damageBoss (); }
         }
     }
+
+	public void damageBoss(){
+		myAnim.SetBool("damaged", true);
+		Invoke ("resetAnim", 0.3f);
+		life -= 1;
+	}
+
+	public void resetAnim(){
+		myAnim.SetBool ("damaged", false);
+	}
 
     public void die()
     {

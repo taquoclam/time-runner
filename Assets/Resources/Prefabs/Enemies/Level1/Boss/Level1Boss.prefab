@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61027961940324652}
   - component: {fileID: 114239909497258434}
   - component: {fileID: 222521450816914348}
+  - component: {fileID: 95252372451497150}
   m_Layer: 12
   m_Name: Level1Boss
   m_TagString: Boss
@@ -76,6 +77,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.46}
   m_EdgeRadius: 0
+--- !u!95 &95252372451497150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235601830528102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 215380d12b46c42b3bffb9b0b65f530c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114239909497258434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +108,7 @@ MonoBehaviour:
   life: 50
   weapon: {fileID: 114228778587706864, guid: d967aeead0dc0a54697bca807ba74ade, type: 2}
   shootingRate: 1
+  jumpTime: 0
 --- !u!212 &212651677494888760
 SpriteRenderer:
   m_ObjectHideFlags: 1
