@@ -6,6 +6,7 @@ namespace Projectiles
     public class PlayerProjectile : MonoBehaviour
     {
         protected Rigidbody2D rb;
+        public double Damage;
 
         // default: go at speed 1 in direction of mouse
         void Start()
@@ -19,13 +20,22 @@ namespace Projectiles
 
             var tag = coll.gameObject.tag.ToLower();
 
-            // break on enemy (todo: make breaking animation)
-            if (tag.StartsWith("enemy") || tag.StartsWith("boss"))
+            if (tag.StartsWith("enemy"))
             {
+                EnemyController ec = coll.GetComponent<EnemyController>();
+                if (ec != null)
+                    ec.TakeDamage(Damage);
+                DestroySelf();
+            } else if (tag.StartsWith("boss"))
+            {
+                BossController bc = coll.GetComponent<BossController>();
+                if (bc != null)
+                    bc.TakeDamage(Damage);
                 DestroySelf();
             }
         }
 
+        // todo: breaking animation
         void DestroySelf()
         {
             Destroy(gameObject);

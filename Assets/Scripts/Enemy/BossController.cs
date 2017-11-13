@@ -1,13 +1,14 @@
-﻿using System.Runtime.InteropServices;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.VR.WSA;
+﻿using System;
 using Projectiles;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class BossController : MonoBehaviour
 {
-    public int life = 100;
+    public double hp = 100;
+    private double startHp; // caches the HP boss starts with
 
     // ensure we die only once
     private Object deathLock = new Object();
@@ -21,6 +22,8 @@ public class BossController : MonoBehaviour
     public EnemiesShooterProjectile weapon;
     public float shootingRate;
 
+    private Slider healthBar;
+
     public float jumpTime;
 
     // Use this for initialization
@@ -30,6 +33,13 @@ public class BossController : MonoBehaviour
         myAnim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb.velocity = new Vector2(GameControl.scrollSpeed, 0);
+
+        healthBar = GameObject.Find("BossHealth").GetComponent<Slider>();
+
+        healthBar.value = healthBar.maxValue;
+        healthBar.GetComponent<CanvasGroup>().alpha = 1; // make it visible
+
+        startHp = hp;
 
         enteringScreen = true;
         if (weapon != null)
@@ -47,35 +57,34 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    // Take damage of this amount
+    public void TakeDamage(double damage)
     {
-        var tag = coll.gameObject.tag.ToLower();
-        if (tag.StartsWith("playerprojectile"))
+        hp -= damage;
+        healthBar.value = (float) (healthBar.maxValue * (Math.Max(hp, 0) / startHp));
+        if (hp <= 0)
         {
-            if (life < 1)
-            {
-                die();
-            }
-            else
-            {
-                damageBoss();
-            }
+            healthBar.GetComponent<CanvasGroup>().alpha = 0; // hide boss health bar
+            die();
+        }
+        else
+        {
+            damageAnim();
         }
     }
 
-    public void damageBoss()
+    private void damageAnim()
     {
         myAnim.SetBool("damaged", true);
         Invoke("resetAnim", 0.3f);
-        life -= 1;
     }
 
-    public void resetAnim()
+    private void resetAnim()
     {
         myAnim.SetBool("damaged", false);
     }
 
-    public void die()
+    private void die()
     {
         lock (deathLock)
         {
@@ -84,11 +93,10 @@ public class BossController : MonoBehaviour
         }
 
         Destroy(gameObject);
-        // todo: dim screen or something
         SceneManager.LoadScene("End");
     }
 
-    public void Fire()
+    private void Fire()
     {
         Instantiate(weapon, transform.position, Quaternion.identity);
     }
