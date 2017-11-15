@@ -6,6 +6,7 @@ namespace Projectiles
     {
         void Start()
         {
+            Damage = 1;
             rb = GetComponent<Rigidbody2D>();
             rb.velocity = PlayerController.DirectionOfMouse() * 12.0f;
         }

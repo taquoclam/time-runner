@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 public class Util
 {
@@ -10,4 +11,5 @@ public class Util
         var ind = Random.Range(0, dict.Keys.Count);
         return dict[keys.ElementAt(ind)];
     }
+
 }

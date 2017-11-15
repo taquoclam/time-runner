@@ -1,10 +1,9 @@
-﻿using System;
-using UnityEngine;
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public double hp = 1;
+
     private SoundManager mySoundManager;
     private ScoreManager myScoreManager;
     private float itemSpawnRate = 0.25f;
@@ -21,21 +20,10 @@ public class EnemyController : MonoBehaviour
         myScoreManager = FindObjectOfType<ScoreManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(double damage)
     {
-    }
-
-    private void OnTriggerEnter2D(Collider2D coll)
-    {
-        var tag = coll.gameObject.tag.ToLower();
-
-        // die from projectile (todo: health, death animation)
-        if (tag.StartsWith("playerprojectile"))
-        {
-            myScoreManager.addScore(4);
-            die();
-        }
+        hp -= damage;
+        if (hp <= 0) die();
     }
 
     public void die()
@@ -47,6 +35,7 @@ public class EnemyController : MonoBehaviour
         }
 
         mySoundManager.levelOneDied();
+        myScoreManager.addScore(4);
         if (itemSpawnRate == 1 || itemSpawnRate > Random.value)
         {
             spawnRandomItem();
